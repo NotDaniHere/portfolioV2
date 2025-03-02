@@ -4,18 +4,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #000080, #4b0082); /* Dark Blue to Dark Purple Gradient Background */
+    background: linear-gradient(black, rgb(3, 3, 70)); /* Dark Blue to Dark Purple Gradient Background */
     color: #fff;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    border-radius: 10px black;
+    display:flex;
+    flex-direction: column;
+    min-height:100vh;
 }
-
 nav {
-    background: rgba(0, 0, 128, 0.8); /* Semi-Transparent Dark Blue Navbar */
+    background: rgba(0, 0, 0, 0); /* Semi-Transparent Dark Blue Navbar */
     color: #fff;
     padding: 15px 10px;
     position: fixed;
@@ -23,6 +25,12 @@ nav {
     width: 100%;
     z-index: 1000;
     text-align: center;
+    border-bottom:10px black;
+}
+main {
+    flex: 1; /* Makes main take up all available space */
+    display: flex;
+    justify-content: center;
 }
 
 nav a {
@@ -34,35 +42,43 @@ nav a {
 }
 
 nav a:hover {
-    color: #8a2be2; /* Purple Highlight on Hover */
+    color: darkmagenta; /* Purple Highlight on Hover */
 }
 
 main {
     padding: 100px 20px; /* Space for fixed navbar */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: middle;
     height: 100vh; /* Ensures full screen height */
     box-sizing: border-box;
 }
-
+.card a {
+    color: whitesmoke;
+    text-decoration: dotted;
+    font-weight:bold;
+}
 .card {
-    background-color: #000; /* Black background for the card */
+    background-color: rgba(12, 12, 89, 0.285); /* Black background for the card */
     color: #fff; /* White text color */
     padding: 30px;
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    text-align: center;
-    width: 80%; /* Width of the card, can adjust as needed */
-    max-width: 500px; /* Max width for larger screens */
+    text-align: middle;
+    width: 100%; /* Width of the card, can adjust as needed */
+    max-width: 900px; /* Max width for larger screens */
+    margin-top: 5%;
+    margin-bottom:1px;
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    
 }
 
 footer {
-    background: rgba(0, 0, 128, 0.8); /* Semi-Transparent Dark Blue Footer */
+    background: rgb(3, 3, 70); /* Semi-Transparent Dark Blue Footer */
     color: #fff;
-    text-align: center;
+    text-align: right;
     padding: 10px;
-    position: fixed;
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
@@ -70,9 +86,9 @@ footer {
 
 button{
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.8s;
     color: white;
-    background-color: black;
+    background-color: rgba(12, 12, 89, 0.304);
     border-color:black;
     border:0px;
     font-size:18px;
@@ -81,7 +97,7 @@ button{
 
 button:hover, a:hover {
     transform: scale(1.1);
-    color: #8a2be2;
+    color: darkmagenta;
 }
 
 /* Animations */
@@ -97,12 +113,23 @@ button:hover, a:hover {
 }
 
 ul li a {
-    transition: color 0.3s ease-in-out;
+    transition: color 0.7s ease-in-out;
+}
+.card li a{
+    transition: color 0.7s ease-in-out;
 }
 
 ul li a:hover {
-    color: #8a2be2; /* Purple Hover */
+    color: #c698ff; /* Purple Hover */
     text-decoration: underline;
+}
+.card-container {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers the cards in the middle */
+    gap: 8px; /* Adds space between cards */
+    margin-top: 5px;
+    
 }
 
 /* Responsive Design */
@@ -125,7 +152,9 @@ ul li a:hover {
 
     .card {
         width: 90%; /* Adjust width for mobile */
-        padding: 100px; /* Less padding on mobile */
+        padding: 30px; /* Less padding on mobile */
+        font-size: 2vh;
+        height: 35vh;
     }
 }
 ul {
