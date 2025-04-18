@@ -18,5 +18,13 @@ def hobbies():
 def contact():
     return render_template('contact.html')
 
+@app.route('/github')
+def github():
+    return render_template('github.html')
+
+@app.route('/instagram')
+def instagram():
+    return render_template('instagram.html')
+
 if __name__ == '__main__':
     app.run(debug=False)
